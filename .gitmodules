@@ -1,3 +1,6 @@
 [submodule "meshlab"]
 	path = meshlab
 	url = git@github.com:zarquon42b/meshlab.git
+[submodule "vcglib"]
+	path = vcglib
+	url = https://github.com/cnr-isti-vclab/vcglib.git
