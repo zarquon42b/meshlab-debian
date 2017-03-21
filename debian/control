@@ -1,0 +1,24 @@
+Source: meshlab
+Section: graphics
+Priority: extra
+Maintainer: Stefan Schlager <zarquon42@gmail.com>
+Vcs-Browser: http://git.debian.org/?p=debian-science/packages/meshlab.git
+Vcs-Git: http://git.debian.org/git/debian-science/packages/meshlab.git
+Build-Depends: debhelper (>= 8),libqt5xmlpatterns5-dev, qtscript5-dev, qtbase5-dev, libqt5opengl5-dev, libbz2-dev, xsltproc, docbook-xsl, qt5-default, freeglut3-dev
+Homepage: http://meshlab.sourceforge.net/
+Standards-Version: 3.9.1
+
+Package: meshlab
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: System for processing and editing triangular meshes
+ MeshLab is an open source, portable, and extendible system for the
+ processing and editing of unstructured 3D triangular meshes.
+ The system is aimed to help the processing of the typical not-so-small
+ unstructured models arising in 3D scanning, providing a set of tools for
+ editing, cleaning, healing, inspecting, rendering and converting this kind
+ of meshes.
+ .
+ Meshlab can read files in these formats: PLY, STL, OFF, OBJ, 3DS, COLLADA
+ and PTX. It can write PLY, STL, OFF, OBJ, 3DS, COLLADA, VRML, and DXF.
+

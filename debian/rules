@@ -1,0 +1,63 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+CFLAGS = -Wall -g
+
+configure: configure-stamp
+configure-stamp:
+	dh_testdir
+	cd meshlab/src/external ; qmake -spec linux-g++ -recursive external.pro
+	cd meshlab/src ; qmake -spec linux-g++ -recursive meshlab_full.pro
+	touch $@
+
+build: build-stamp
+build-stamp: configure-stamp
+	dh_testdir
+	$(MAKE) -C meshlab/src/external
+	$(MAKE) -C meshlab/src
+	touch $@
+
+clean:
+	dh clean
+	rm -f build-stamp configure-stamp
+	-rm -f meshlab/docs/meshlab.1.xml meshlab/docs/meshlabserver.1.xml
+	if [ -e meshlab/src/Makefile ] ; then $(MAKE) -C meshlab/src distclean ; fi
+	if [ -e meshlab/src/external/Makefile ] ; then $(MAKE) -C meshlab/src/external distclean ; fi
+	-rm meshlab/src/external/lib/linux-g++/lib3ds.a
+	-rm meshlab/src/external/lib/linux-g++/libbz2.a
+	-rm meshlab/src/external/lib/linux-g++/libjhead.a
+	-rm meshlab/src/external/lib/linux-g++/liblevmar.a
+	-rm meshlab/src/external/lib/linux-g++/libmuparser.a
+	-rm meshlab/src/external/lib/linux-g++/libopenctm.a
+	-rm meshlab/src/external/lib/linux-g++/libssynth.a
+	#-rm -rf meshlab/src/external/lib/linux-g++
+	-rm meshlab/src/external/bzip2-1.0.5/Makefile.bzip2-1
+	-rm meshlab/src/external/jhead-2.95/Makefile.jhead-2
+	-rm meshlab/src/external/levmar-2.3/Makefile.levmar-2
+	-rm meshlab/src/external/structuresynth/Makefile.structuresynth
+	-rm meshlab/src/meshlab/plugins/*.so
+	-find ./ -name "Makefile" | xargs rm -f
+	-find ./ -name "Makefile.Debug" | xargs rm -f
+	-find ./ -name "Makefile.Release" | xargs rm -f
+	#-mv 3Dlabs-license.txt meshlab/src/distrib/shaders
+	#-mv LightworkDesign-license.txt meshlab/src/distrib/shaders
+
+override_dh_shlibdeps:
+	dh_shlibdeps -lusr/lib/meshlab
+
+install: build
+	dh_testdir
+		#-mv meshlab/src/distrib/shaders/3Dlabs-license.txt .
+	#-mv meshlab/src/distrib/shaders/LightworkDesign-license.txt .
+	dh install
+
+# Build architecture-independent files here.
+binary-indep: build install
+	dh binary-indep
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh binary-arch
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install configure

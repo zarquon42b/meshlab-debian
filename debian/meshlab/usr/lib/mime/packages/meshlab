@@ -1,0 +1,4 @@
+model/mesh; /usr/bin/meshlab '%s'; test=/usr/bin/test -n "$DISPLAY"
+application/x-3ds; /usr/bin/meshlab '%s'; test=/usr/bin/test -n "$DISPLAY"
+image/x-3ds; /usr/bin/meshlab '%s'; test=/usr/bin/test -n "$DISPLAY"
+application/sla; /usr/bin/meshlab '%s'; test=/usr/bin/test -n "$DISPLAY"

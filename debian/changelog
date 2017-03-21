@@ -1,0 +1,213 @@
+meshlab (2016.12~trusty) trusty; urgency=medium
+
+  * trusty-release
+
+ -- Stefan Schlager <zarquon42@gmail.com>  Wed, 01 Mar 2017 10:20:42 +0100
+
+meshlab (2016.12~xenial) xenial; urgency=medium
+
+  * release of 2016v12
+
+ -- Stefan Schlager <zarquon42@gmail.com>  Mon, 23 Jan 2017 13:57:30 +0100
+
+meshlab (1.3.3.99-xenial) xenial; urgency=medium
+
+  * new prerelease of 1.3.4
+
+ -- Stefan Schlager <zarquon42@gmail.com>  Wed, 09 Nov 2016 10:03:58 +0100
+
+meshlab (1.3.3-2-xenial) xenial; urgency=medium
+
+  * xenial release
+
+ -- Stefan Schlager <zarquon42@gmail.com>  Wed, 19 Oct 2016 11:19:39 +0200
+
+meshlab (1.3.3-2-trusty) trusty; urgency=medium
+
+  * New upstream release
+ -- Stefan Schlager <zarquon42@gmail.com>  Sat, 10 May 2014 22:11:37 +0200
+
+
+meshlab (1.3.3-trusty) trusty; urgency=low
+
+  * trusty build
+ -- Stefan Schlager <zarquon42@gmail.com>  Mon, 10 Mar 2014 16:10:34 +0200
+
+meshlab (1.3.2) precise; urgency=low
+
+  * replaced #include <Vector> with #include <vector> in knnGraph.h
+  * devel version form actual trunk
+  * uncommented ssynth from external.pro
+  * added -lGl -lGLU -lglut to meshlabserver.pro
+  * commented zippering plugin and filter_csg because of compilation errors
+ -- Stefan Schlager <zarquon42@gmail.com>  Mon, 23 Jul 2012 21:11:34 +0200
+
+meshlab (1.3.0a+dfsg1-2) unstable; urgency=low
+
+  * rules: Use linux-g++ as qmake spec (fixes FTBFS with qt4 > 4.7).
+  * New patches:
+    - 12_ply_numeric: Set LC_NUMERIC to "C" in main().
+      Thanks to Luka Frelih for the patch. Closes: #623361.
+    - 13_cstddef: Include <cstddef> on files using offsetoff
+      (closes: #625053).
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Thu, 12 May 2011 12:17:16 +0200
+
+meshlab (1.3.0a+dfsg1-1) unstable; urgency=low
+
+  * New upstream version (closes: #618522)
+  * Repackage the upstream sources to get rid of some files with questionable
+    licensing information and useless libraries, see the copyright file for
+    details.
+  * Builds with GCC-4.5 (closes: #565034)
+  * Fix watch-file to work with new upstream names and dfsg source
+    (closes: #582477)
+  * Require debhelper version 8 or above.
+  * control:
+    - Update standards-version to 3.9.1, cleanup.
+    - Remove build-dep to libgl-dev to fix a lintian warning about a
+      build-dep to a virtual package.
+    - Remove build-dep to asciidoc, add build-dep to libeigen2-dev.
+  * rules:
+    - Remove manpage-related code.
+    - Build the necessary code from meshlab/src/external. Also clean it.
+    - Override dh_shlibdeps to include /usr/lib/meshlab in search path.
+    - Don't install shader licenses.
+  * install: Install binaries from meshlab/src/distrib.
+  * copyright: Update to the latest DEP5 format, document changes due to
+    source repackaging and add the copyright info for the files added in
+    this upstream release.
+  * Hardcode shadersDir and pluginDir in upstream source to locations
+    in the Debian binary package.
+  * Use source format '3.0 (quilt)'.
+  * Split changes affecting upstream code to branches in the git repository
+    at git.d.o. Add DEP3 patch metadata headers to debian/metapatches and
+    generate patches from git branches with gdp (http://gitorious.org/gdp).
+    Current patches:
+    - 01_muparser: Use Debian muparser.
+    - 02_qhull: Use Debian qhull.
+    - 03_lib3ds: Use Debian lib3ds.
+    - 04_libbz2: Use Debian libbz2.
+    - 05_glew: Use Debian GLEW.
+    - 06_eigen: Use Debian Eigen.
+    - 07_disable-updates: Disable checking for updates on startup.
+    - 08_externals: Only build necessary external sources.
+    - 09_rpath: Use /usr/lib/meshlab as RPATH in binaries.
+    - 10_shadersdir: Hardcode shadersDir to the correct path in Debian
+    - 11_pluginsdir: Hardcode pluginsDir to the correct path in Debian
+  * Add a README.source file documenting the patch generation.
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Mon, 28 Mar 2011 17:54:11 +0200
+
+meshlab (1.2.2-3) UNRELEASED; urgency=low
+
+  * control: Add Build-dep to libgl-dev
+  * Disable checking for updates on startup (LP: #652145)
+  * io_u3d.cpp: Use correct IDTFConverter path under Linux.
+  * export_u3d.h: Add hyperref package to LaTeX output,
+    makes pdflatex compilation work correctly in Debian.
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Thu, 03 Mar 2011 11:28:01 +0100
+
+meshlab (1.2.2-2) unstable; urgency=low
+
+  * Add a watch file
+  * Call a2x with -L switch to avoid use of xmllint (closes: #556824)
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Wed, 18 Nov 2009 18:36:11 +0100
+
+meshlab (1.2.2-1) unstable; urgency=low
+
+  * New upstream version
+  * Do not build filter_isoparametrization because liblevmar dependency
+    is not (yet) in Debian
+  * Fix compilation with gcc-4.4, thanks to Jonathan Liu for the patch
+    (closes: #539544)
+  * rules: Add compiler variables to the qmake call (for testing with new
+    GCC versions)
+  * io_3ds.pro: Make LIBS and INCLUDEPATH point to Debian version of lib3ds
+  * io_epoch.pro: Make LIBS point to Debian version of libbz2
+  * control:
+    - Move Homepage URL to the source package section
+    - Update to standards-version 3.8.3
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Thu, 08 Oct 2009 16:40:41 +0200
+
+meshlab (1.2.1-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Patch upstream source to build with Debian versions of GLEW,
+    qhull, lib3ds, libbz2, muparser
+  * rules:
+    - Add build-deps to libqhull-dev, libmuparser-dev
+    - Build asciidoc manpages from meshlab/docs with a2x
+  * install: Do not install textures
+  * copyright: Update
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Wed, 27 May 2009 18:07:15 +0200
+
+meshlab (1.2.0-1) UNRELEASED; urgency=low
+
+  * New upstream version
+  * Add a debian/manpages file
+  * Add xpm icons
+  * Add a .desktop file
+  * Fix plugin and shader paths to Debian standards
+  * control:
+    - Build-dep and compat to debhelper v7
+    - Upgrade to standards-version 3.8.1
+  * install:
+    - Install rendermonkey shaders
+    - Install plugins to /usr/lib/meshlab/plugins
+    - Install .desktop file and icons
+  * rules: clean up and simplify with dh
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Thu, 30 Apr 2009 16:08:53 +0200
+
+meshlab (1.1.1-2) UNRELEASED; urgency=low
+
+  * Add manpages for meshlab and meshlabserver
+  * Add build-dep to asciidoc, xsltproc, docbook-xsl, libqt4-opengl-dev
+  * copyright: convert to machine readable format
+  * control: change section to graphics. Add Vcs-Browser and Vcs-Git 
+    fields pointing to git.debian.org
+  * rules: call distclean instead of clean in the clean target, simplify
+  * Upload to unstable (closes: #426581)
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Thu, 15 May 2008 22:39:13 +0300
+
+meshlab (1.1.1-1) UNRELEASED; urgency=low
+
+  * New upstream version
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Mon, 14 Apr 2008 17:27:20 +0200
+
+meshlab (1.1.1~b20080308-0) UNRELEASED; urgency=low
+
+  * Import new upstream beta release
+  * Disable checking for updates and usage statistics reporting
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Mon, 17 Mar 2008 12:35:05 +0100
+
+meshlab (1.1.0-1) UNRELEASED; urgency=low
+
+  * New upstream version
+  * Reorganize source tree to match the upstream release tarball:
+    meshlab sources are under meshlab/ and vcg library under sf/
+  * Change call to qmake to qmake-qt4 in debian/rules
+  * Add versioned dependency to lib3ds-dev (>= 1.3.0)
+  * Build with Debian libGLEW
+  * Fix .install to match files in new version
+  * Hardcode plugin and shader directories for Debian build
+  * Upstream-type fixes:
+    - Create ui_painttoolbox.h during build
+    - Fix private variable access in render_rm
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Fri, 01 Feb 2008 15:31:32 +0100
+
+meshlab (1.1.0~b~cvs20070528-1) UNRELEASED; urgency=low
+
+  * Initial release
+
+ -- Teemu Ikonen <tpikonen@gmail.com>  Sat,  2 Jun 2007 20:29:02 +0200
+

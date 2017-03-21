@@ -1,0 +1,212 @@
+Format: http://dep.debian.net/deps/dep5/
+Upstream-Name: MeshLab
+Upstream-Contact: http://meshlab.sourceforge.net/
+X-Debianized-By: Teemu Ikonen <tpikonen@gmail.com>
+X-Debianized-Date: 2007-05-29 16:45:55 +0200.
+Source: http://sourceforge.net/projects/meshlab/files/meshlab/MeshLab%20v1.3.3/MeshLabSrc_AllInc_v133.tgz
+http://sourceforge.net/projects/meshlab/files/meshlab/MeshLab%20v1.3.0/MeshLabSrc_AllInc_v130a.tgz
+ The upstream Meshlab source has been repackaged for this Debian release.
+ The primary reason is the uncertain copyright status of some (unused) code
+ in the Meshlab distribution. Additionally, some external libraries which are
+ distributed with the Meshlab source, but are also available in Debian as
+ separate packages have been removed.
+ .
+ The following subdirectories or files have been removed:
+ .
+ meshlab/src/distrib/render_template    Unnecessary copies of MOSAICfunctions.h
+ meshlab/src/distrib/sample             Textures with unknown copyright status.
+ meshlab/src/external/ann_1.1.1         In Debian.
+ meshlab/src/external/bzip2-1.0.5       In Debian.
+ meshlab/src/external/glew-1.5.1        In Debian.
+ meshlab/src/external/inc               Not needed for Linux builds.
+ meshlab/src/external/lib3ds-1.3.0      In Debian.
+ meshlab/src/external/muparser_v130     In Debian.
+ meshlab/src/external/muparser_v132     In Debian.
+ meshlab/src/external/ode-0.11.1        Empty (libode-dev is in Debian).
+ meshlab/src/external/openkinect        Not needed yet, Debian has freenect.
+ meshlab/src/external/qhull-2003.1      In Debian.
+ meshlab/src/external/tsai-30b3         Not needed for the current build.
+ meshlab/src/meshlabplugins/edit_ocme   Unknown license, not needed.
+ meshlab/src/meshlabplugins/edit_vase   Unknown license, not needed.
+ vcglib/vcg/Eigen                       In Debian.
+
+Files: *
+Copyright: 2005-2009 Visual Computing Lab  ISTI - Italian National
+ Research Council
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this package; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License can be found in `/usr/share/common-licenses/GPL'.
+
+Files: meshlab/src/distrib/shaders/dimple.*,
+ meshlab/src/distrib/shaders/envmap.*, meshlab/src/distrib/shaders/glass.*,
+ meshlab/src/distrib/shaders/gooch.*,
+ meshlab/src/distrib/shaders/polkadot3d.*,
+ meshlab/src/distrib/shaders/lattice.frag,
+Copyright: 2002-2004 3Dlabs, Inc.
+License: BSD-3
+ /************************************************************************
+ *                                                                       *
+ *               Copyright (C) 2002-2004  3Dlabs Inc. Ltd.               *
+ *                                                                       *
+ *                        All rights reserved.                           *
+ *                                                                       *
+ * Redistribution and use in source and binary forms, with or without    *
+ * modification, are permitted provided that the following conditions    *
+ * are met:                                                              *
+ *                                                                       *
+ *     Redistributions of source code must retain the above copyright    *
+ *     notice, this list of conditions and the following disclaimer.     *
+ *                                                                       *
+ *     Redistributions in binary form must reproduce the above           *
+ *     copyright notice, this list of conditions and the following       *
+ *     disclaimer in the documentation and/or other materials provided   *
+ *     with the distribution.                                            *
+ *                                                                       *
+ *     Neither the name of 3Dlabs Inc. Ltd. nor the names of its         *
+ *     contributors may be used to endorse or promote products derived   *
+ *     from this software without specific prior written permission.     *
+ *                                                                       *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS   *
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT     *
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS     *
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE        *
+ * COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, *
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,  *
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;      *
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER      *
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT    *
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN     *
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE       *
+ * POSSIBILITY OF SUCH DAMAGE.                                           *
+ *                                                                       *
+ ************************************************************************/
+
+Files: meshlab/src/distrib/shaders/lattice.gdp,
+ meshlab/src/distrib/shaders/lattice.vert
+Copyright: 2002-2004  LightWork Design Ltd.
+License: BSD-3
+ /************************************************************************
+ *                                                                       *
+ *             Copyright (C) 2002-2004  LightWork Design Ltd.            *
+ *                                                                       *
+ *                        All rights reserved.                           *
+ *                                                                       *
+ * Redistribution and use in source and binary forms, with or without    *
+ * modification, are permitted provided that the following conditions    *
+ * are met:                                                              *
+ *                                                                       *
+ *     Redistributions of source code must retain the above copyright    *
+ *     notice, this list of conditions and the following disclaimer.     *
+ *                                                                       *
+ *     Redistributions in binary form must reproduce the above           *
+ *     copyright notice, this list of conditions and the following       *
+ *     disclaimer in the documentation and/or other materials provided   *
+ *     with the distribution.                                            *
+ *                                                                       *
+ *     Neither the name of LightWork Design Ltd. nor the names of its    *
+ *     contributors may be used to endorse or promote products derived   *
+ *     from this software without specific prior written permission.     *
+ *                                                                       *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS   *
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT     *
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS     *
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE        *
+ * COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, *
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,  *
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;      *
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER      *
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT    *
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN     *
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE       *
+ * POSSIBILITY OF SUCH DAMAGE.                                           *
+ *                                                                       *
+ ************************************************************************/
+
+Files: meshlab/src/meshlab/qtc-gdbmacros/gdbmacros.cpp,
+ meshlab/src/meshlabplugins/qtc-gdbmacros/gdbmacros.cpp,
+ meshlab/src/meshlabserver/qtc-gdbmacros/gdbmacros.cpp,
+ meshlab/src/qtc-gdbmacros/gdbmacros.cpp
+Copyright: 2009 Nokia Corporation and/or its subsidiary(-ies).
+License: LGPL-2.1
+
+Files: meshlab/src/meshlabplugins/editrgbtri/*
+Copyright: 2007 DISI - Department of Computer Science University of Genova
+License: GPL-2+
+
+Files: meshlab/src/meshlabplugins/editrgbtri/*
+Copyright: 2007 DISI - Department of Computer Science University of Genova
+License: GPL-2+
+
+Files: meshlab/src/meshlabplugins/filter_poisson/src/*
+Copyright: 2006, Michael Kazhdan and Matthew Bolitho
+License: BSD-3
+ Copyright (c) 2006, Michael Kazhdan and Matthew Bolitho
+ All rights reserved.
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are met:
+ .
+ Redistributions of source code must retain the above copyright notic this
+ list of conditions and the following disclaimer. Redistributions in binary
+ form must reproduce the above copyright notice, this list of conditions and
+ the following disclaimer in the documentation and/or other materials
+ provided with the distribution.
+ .
+ Neither the name of the Johns Hopkins University nor the names of its
+ contributors may be used to endorse or promote products derived from this
+ software without specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE  GOODS OR SERVICES; LOSS OF USE,
+ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Files: meshlab/src/meshlabplugins/render_radiance_scaling/*
+Copyright: 2010 Vergne Romain, Dumas Olivier,
+ INRIA - Institut Nationnal de Recherche en Informatique et Automatique
+License: GPL-2+
+
+Files: vcglib/wrap/system/getopt.*
+Copyright: 1987-1993 Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: vcglib/vcg/complex/trimesh/create/mc_lookup_table.h
+Copyright: 2002 Thomas Lewiner <thomas.lewiner@polytechnique.org>
+License: GPL-2+
+
+Files: vcglib/vcg/complex/trimesh/create/emc_lookup_table.h
+Copyright: 2002 by Computer Graphics Group, RWTH Aachen
+License: GPL-2+
+
+Files: vcglib/vcg/math/random_generator.h
+Copyright: 2005-2009 Visual Computing Lab  ISTI - Italian National
+ Research Council,
+ 1994 Everett F. Carter Jr. [Polar form of the Box-Muller Transformation],
+ 1997-2002 Makoto Matsumoto and Takuji Nishimura [Mersenne RNG]
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2007-2011, Teemu Ikonen <tpikonen@gmail.com>
+License: GPL-2+
+

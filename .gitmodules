@@ -1,0 +1,3 @@
+[submodule "meshlab"]
+	path = meshlab
+	url = git@github.com:zarquon42b/meshlab.git

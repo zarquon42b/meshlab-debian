@@ -1,0 +1,9 @@
+meshlab/src/distrib/meshlab             usr/bin/
+meshlab/src/distrib/meshlabserver       usr/bin/
+meshlab/src/distrib/plugins/*.so        usr/lib/meshlab/plugins
+meshlab/src/distrib/plugins/*.xml        usr/lib/meshlab/plugins
+meshlab/src/distrib/shaders/*           usr/share/meshlab/shaders
+meshlab/src/distrib/lib*.so.*           usr/lib/meshlab
+debian/meshlab.desktop                  usr/share/applications
+debian/meshlab_32x32.xpm                usr/share/pixmaps
+debian/meshlab_48x48.xpm                usr/share/pixmaps
