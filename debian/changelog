@@ -1,3 +1,9 @@
+meshlab (2016.12~trusty2) trusty; urgency=medium
+
+  * some bug fixes (screen poission)
+
+ -- Stefan Schlager <zarquon42@gmail.com>  Tue, 21 Mar 2017 09:49:11 +0100
+
 meshlab (2016.12~trusty) trusty; urgency=medium
 
   * trusty-release
